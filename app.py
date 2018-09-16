@@ -23,7 +23,7 @@ def dim():
     return 'Hello World'
 
 @app.route("/")
-def app():
+def mainapp():
    templateData = {}
    return render_template('index.html', **templateData)
 
