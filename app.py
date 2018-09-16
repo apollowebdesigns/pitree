@@ -2,6 +2,12 @@ from flask import Flask, render_template, jsonify
 from serialtest import get_dist
 app = Flask(__name__)
 from tree import light_tree, dim_tree
+import _thread
+
+def test():
+    print('in the thread')
+
+_thread.start_new_thread(test)
 
 @app.route('/start')
 def start():
