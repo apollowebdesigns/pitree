@@ -2,21 +2,23 @@ from flask import Flask, render_template, jsonify
 from serialtest import get_dist
 app = Flask(__name__)
 from tree import light_tree, dim_tree
-import _thread
+from multiprocessing import Process
 
-def test():
+def test(arg):
     print('in the thread')
 
-# Dumped for now
-# _thread.start_new_thread(test)
+p = None
 
 @app.route('/start')
 def start():
+    p = Process(target=test, args=('bob',))
+    p.start()
     light_tree()
     return 'Hello World'
 
 @app.route('/stop')
 def stop():
+    p.join()
     dim_tree()
     return 'Hello World'
 
