@@ -7,7 +7,8 @@ import _thread
 def test():
     print('in the thread')
 
-_thread.start_new_thread(test)
+# Dumped for now
+# _thread.start_new_thread(test)
 
 @app.route('/start')
 def start():
