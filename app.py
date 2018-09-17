@@ -8,7 +8,7 @@ def test(arg):
     print('in the thread')
 
 def create_process():
-    return Process(target=test, args=('bob',))
+    return Process(target=get_dist)
 
 p = create_process()
 
@@ -24,10 +24,7 @@ def stop():
 
 @app.route('/light')
 def light():
-    try:
-        p.start()
-    except:
-        p = create_process()
+    p.start()
     return 'Hello World'
 
 @app.route('/dim')
