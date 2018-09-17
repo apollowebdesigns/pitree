@@ -1,17 +1,17 @@
 $(document).ready(function(){
-    $("p").click(function(){
-        $(this).hide();
+    $(".mstart").click(function(){
+        $.get("/start");
     });
 
-    $("p").click(function(){
-        $(this).hide();
+    $(".mstop").click(function(){
+        $.get("/stop");
     });
 
-    $("p").click(function(){
-        $(this).hide();
+    $(".astart").click(function(){
+        $.get("/light");
     });
 
-    $("p").click(function(){
-        $(this).hide();
+    $(".astop").click(function(){
+        $.get("/dim");
     });
 });
