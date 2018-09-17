@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify
-from serialtest import get_dist
+from serialtest import get_dist, interrupt
 app = Flask(__name__)
 from tree import light_tree, dim_tree
 from multiprocessing import Process
@@ -24,12 +24,12 @@ def stop():
 
 @app.route('/light')
 def light():
-    p.start()
+    get_dist()
     return 'Hello World'
 
 @app.route('/dim')
 def dim():
-    p.join()
+    interrupt = False
     return 'Hello World'
 
 @app.route("/")
