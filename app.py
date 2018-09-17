@@ -7,27 +7,26 @@ from multiprocessing import Process
 def test(arg):
     print('in the thread')
 
-p = None
+p = Process(target=test, args=('bob',))
 
 @app.route('/start')
 def start():
-    p = Process(target=test, args=('bob',))
-    p.start()
     light_tree()
     return 'Hello World'
 
 @app.route('/stop')
 def stop():
-    p.join()
     dim_tree()
     return 'Hello World'
 
 @app.route('/light')
 def light():
+    p.start()
     return 'Hello World'
 
 @app.route('/dim')
 def dim():
+    p.join()
     return 'Hello World'
 
 @app.route("/")
