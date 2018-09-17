@@ -1,16 +1,10 @@
 from flask import Flask, render_template, jsonify
-from serialtest import get_dist, interrupt
+from serialtest import SerialClass
 app = Flask(__name__)
 from tree import light_tree, dim_tree
 from multiprocessing import Process
 
-def test(arg):
-    print('in the thread')
-
-def create_process():
-    return Process(target=get_dist)
-
-p = create_process()
+serials = SerialClass()
 
 @app.route('/start')
 def start():
@@ -24,12 +18,12 @@ def stop():
 
 @app.route('/light')
 def light():
-    get_dist()
+    serials.get_dist()
     return 'Hello World'
 
 @app.route('/dim')
 def dim():
-    interrupt = False
+    serials.go = False
     return 'Hello World'
 
 @app.route("/")
