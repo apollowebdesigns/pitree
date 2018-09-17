@@ -24,9 +24,10 @@ def stop():
 
 @app.route('/light')
 def light():
-    if p._popen == None:
+    try:
+        p.start()
+    except:
         p = create_process()
-    p.start()
     return 'Hello World'
 
 @app.route('/dim')
