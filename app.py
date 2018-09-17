@@ -12,21 +12,20 @@ def test():
 
 @app.route('/start')
 def start():
-    get_dist()
+    light_tree()
     return 'Hello World'
 
 @app.route('/stop')
 def stop():
+    dim_tree()
     return 'Hello World'
 
 @app.route('/light')
 def light():
-    light_tree()
     return 'Hello World'
 
 @app.route('/dim')
 def dim():
-    dim_tree()
     return 'Hello World'
 
 @app.route("/")
