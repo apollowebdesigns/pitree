@@ -18,7 +18,7 @@ def stop():
 
 @app.route('/light')
 def light():
-    serials.go = False
+    serials.go = True
     serials.get_dist()
     return 'Hello World'
 
