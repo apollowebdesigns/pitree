@@ -7,7 +7,10 @@ from multiprocessing import Process
 def test(arg):
     print('in the thread')
 
-p = Process(target=test, args=('bob',))
+def create_process():
+    return Process(target=test, args=('bob',))
+
+p = create_process()
 
 @app.route('/start')
 def start():
@@ -21,6 +24,8 @@ def stop():
 
 @app.route('/light')
 def light():
+    if p._popen == None:
+        p = create_process()
     p.start()
     return 'Hello World'
 
