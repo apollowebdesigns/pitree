@@ -19,10 +19,10 @@ pp.pprint(a)
 
 def loop():
   a.digitalWrite(trigPin, a.LOW)
-  sleep(2)
+  sleep(2/10000)
   # Sets the trigPin on HIGH state for 10 micro seconds
   a.digitalWrite(trigPin, a.HIGH)
-  sleep(1)
+  sleep(1/10000)
   a.digitalWrite(trigPin, a.LOW)
   # Reads the echoPin, returns the sound wave travel time in microseconds
   duration = a.pulseIn(echoPin, a.HIGH)
