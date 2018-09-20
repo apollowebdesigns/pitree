@@ -27,6 +27,8 @@ def loop():
   print("Distance: ")
   print(distance)
 
+while True:
+    loop()
 
 # for i in range(0, 8):
 #     a.digitalWrite(13, a.HIGH)
