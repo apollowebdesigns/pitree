@@ -1,6 +1,8 @@
 from nanpy import ArduinoApi
 from nanpy import SerialManager
 from time import sleep
+import pprint
+pp = pprint.PrettyPrinter(width=41, compact=True)
 
 connection = SerialManager(device='/dev/ttyUSB0')
 
@@ -12,7 +14,7 @@ a.pinMode(trigPin, a.OUTPUT)
 a.pinMode(trigPin, a.INPUT)
 
 print('what is in the arduino api?')
-print(a)
+pp.pprint(a)
 
 
 def loop():
