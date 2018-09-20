@@ -25,7 +25,7 @@ def loop():
   sleep(0.1)
   a.digitalWrite(trigPin, a.LOW)
   # Reads the echoPin, returns the sound wave travel time in microseconds
-  duration = a.PulseIn(echoPin, a.HIGH)
+  duration = a.pulseIn(echoPin, a.HIGH)
   # Calculating the distance
   distance = duration*0.034/2
   # Prints the distance on the Serial Monitor
