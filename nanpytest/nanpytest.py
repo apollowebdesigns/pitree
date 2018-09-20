@@ -11,6 +11,9 @@ a = ArduinoApi(connection=connection)
 a.pinMode(trigPin, a.OUTPUT)
 a.pinMode(trigPin, a.INPUT)
 
+print('what is in the arduino api?')
+print(a)
+
 
 def loop():
   a.digitalWrite(trigPin, a.LOW)
