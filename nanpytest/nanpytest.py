@@ -11,7 +11,7 @@ echoPin = 10
 
 a = ArduinoApi(connection=connection)
 a.pinMode(trigPin, a.OUTPUT)
-a.pinMode(trigPin, a.INPUT)
+a.pinMode(echoPin, a.INPUT)
 
 print('what is in the arduino api?')
 pp.pprint(a)
