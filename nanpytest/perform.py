@@ -36,7 +36,7 @@ def checkspeed(n):
     measure(a, n, 'api.pinMode(0,0)')
     measure(a, n, 'api.millis()')
     measure(a, n, 'api.shiftOut(0, 1, 0, 15)')
-    measure(a, n, 'api.pulseIn(0, 1, 0, 15)')
+    measure(a, n, 'api.pulseIn(0, 0)')
 
     print('')
     print ('performance test for AD9850()')
