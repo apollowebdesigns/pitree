@@ -36,24 +36,7 @@ def checkspeed(n):
     measure(a, n, 'api.pinMode(0,0)')
     measure(a, n, 'api.millis()')
     measure(a, n, 'api.shiftOut(0, 1, 0, 15)')
-
-    a.define.get('__TIME__')  # init cache
-    measure(a, n, 'define.get("__TIME__")')
-
-    a.register.get('DDRB')  # init cache
-    measure(a, n, 'register.get("DDRB").read_value()')
-    measure(a, n, 'register.get("DDRB").address')
-    measure(a, n, 'register.get("DDRB").size')
-
-    a.vcc.read()  # init cache
-    measure(a, n, 'vcc.read()')
-
-    measure(a, n, 'pin.get(0).read_digital_value()')
-    measure(a, n, 'pin.get(0).read_mode()')
-
-    a.eeprom.size  # init cache
-    measure(a, n, 'eeprom.size')
-    measure(a, n, 'eeprom.read(0)')
+    measure(a, n, 'api.pulseIn(0, 1, 0, 15)')
 
     print('')
     print ('performance test for AD9850()')
