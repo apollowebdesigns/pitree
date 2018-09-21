@@ -17,7 +17,7 @@ ultrasonic = Ultrasonic(echoPin, trigPin, False, connection=connection)
 
 def test():
     print(ultrasonic.get_distance())
-    sleep(2)
+    sleep(0.000002)
 
 while True:
     test()
