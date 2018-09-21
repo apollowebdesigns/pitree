@@ -13,10 +13,10 @@ a.pinMode(echoPin, a.INPUT)
 
 def test():
     a.digitalWrite(trigPin, a.LOW)
-    sleep(2/10000)
+    sleep(2)
     # Sets the trigPin on HIGH state for 10 micro seconds
     a.digitalWrite(trigPin, a.HIGH)
-    sleep(1/10000)
+    sleep(1)
     a.digitalWrite(trigPin, a.LOW)
     # Reads the echoPin, returns the sound wave travel time in microseconds
     duration = a.pulseIn(echoPin, a.HIGH)
