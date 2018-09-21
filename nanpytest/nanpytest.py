@@ -2,7 +2,7 @@ from nanpy import ArduinoApi
 from nanpy import SerialManager
 from time import sleep
 
-connection = SerialManager(device='/dev/ttyUSB0')
+connection = SerialManager(device='/dev/ttyACMO')
 
 trigPin = 9
 echoPin = 10
