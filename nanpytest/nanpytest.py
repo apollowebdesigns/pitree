@@ -12,7 +12,6 @@ a = ArduinoApi(connection=connection)
 # a.pinMode(echoPin, a.INPUT)
 
 from nanpy import Ultrasonic
-from nanpy import Arduino
 
 ultrasonic = Ultrasonic(echoPin, trigPin, False, connection=connection)
 
