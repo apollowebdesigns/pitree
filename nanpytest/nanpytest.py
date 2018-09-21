@@ -8,27 +8,17 @@ trigPin = 9
 echoPin = 10
 
 a = ArduinoApi(connection=connection)
-a.pinMode(trigPin, a.OUTPUT)
-a.pinMode(echoPin, a.INPUT)
+# a.pinMode(trigPin, a.OUTPUT)
+# a.pinMode(echoPin, a.INPUT)
+
+from nanpy import Ultrasonic
+from nanpy import Arduino
+
+ultrasonic = Ultrasonic(echoPin, trigPin, False, connection=connection)
 
 def test():
-    a.digitalWrite(trigPin, a.LOW)
+    print(ultrasonic.get_distance())
     sleep(2)
-    # Sets the trigPin on HIGH state for 10 micro seconds
-    a.digitalWrite(trigPin, a.HIGH)
-    sleep(1)
-    a.digitalWrite(trigPin, a.LOW)
-    # Reads the echoPin, returns the sound wave travel time in microseconds
-    duration = a.pulseIn(echoPin, a.HIGH)
-    print('what is the duration?')
-    print(duration)
-    # Calculating the distance
-    distance = duration*0.034/2
-    print('what is the distance?')
-    print(distance)
-    # Prints the distance on the Serial Monitor
-    print("Distance: ")
-    print(distance)
 
 while True:
     test()
